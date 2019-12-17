@@ -1,8 +1,10 @@
+# Project: 
 # Erin Gilbert
 # Created: ~April 2017
 # Updated: Oct 17 2019
 
 #Usage: rscript  ALL_SNP_FILE.csv NIL_INFO_FILE.csv TRAIT
+#Purpose: Map traits using the SoySNP50k Chip data from the USDA Soybean Isoline collection.
 
 
 ############################################
