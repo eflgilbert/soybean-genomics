@@ -8,7 +8,7 @@
 ############################################
 ######    Define Environment  #############
 ############################################
-
+args <- commandArgs(trailingOnly = TRUE)
 
 ############################################
 ######    Define Functions     #############
@@ -22,13 +22,13 @@ Corner_text <- function(text, location="topright"){  #usage Corner_text(text="Us
 ######    Load All the Data    #############
 ############################################
 #Table ofr SNP values from Song et al.
-SNPs<- read.table(file="./Worktable/masters_publication/data/loess/NIL_SoySNP50k_cM_pos.txt", header=T, stringsAsFactors=F, sep="\t")#all NIL SNPs in one file downloaded from Soybase
+SNPs<- read.table(file=args[1], header=T, stringsAsFactors=F, sep="\t")#all NIL SNPs in one file downloaded from Soybase
 SNPs$CHROM<-gsub("Gm0", "", SNPs$CHROM)
 SNPs$CHROM<-gsub("Gm", "", SNPs$CHROM)
 
 
 #Table of NILs, genes, pedigree, donor, recurrent, maturity, trait type according to Bernard, and subcollection
-NIL_master_table<-read.table(file="./Worktable/masters_publication/mapping/NIL_info_101619_reduced.txt", header=T, stringsAsFactors=F)
+NIL_master_table<-read.table(file="args[2]", header=T, stringsAsFactors=F)
 
 NIL_master_table<-data.frame(NIL_master_table) #create usable dataframe
 print("NILs loaded...")
@@ -44,11 +44,7 @@ print("NILs loaded...")
 #########################################
 #Create table of NILs with trait z from the trait_status table. Includes Donor, Recurrent, and wt/mut status
 
-genes<-unique(NIL_master_table$genes)
-for(g in 1:length(genes))
-  #for(g in 43:length(genes))
-{
-  trait<-genes[g]
+  trait<-args[3]
   print(trait)
   #Trait_NILs<-cbind(NIL_master_table[grep(paste(">", trait, "<", sep=""), NIL_master_table$genes), c(1,4,5)],Status=rep(trait_status[z, 2],length.out = length(grep(paste(">", trait, "<", sep=""),NIL_master_table$genes))))
   Trait_NILs<-NIL_master_table[which(NIL_master_table$genes==trait),]
@@ -399,5 +395,3 @@ for(g in 1:length(genes))
   write.table(header.final, file=output_file, append=T, row.names=F, col.names = F, quote=F, sep="\t")
   write.table(output.final, file=output_file, append=T, row.names=F, quote=F, sep="\t")
   
-  
-}
