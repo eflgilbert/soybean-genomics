@@ -3,11 +3,11 @@
 ## RScript to map introgressions
 <b>introgression_finder.r</b> - 
 
-### Scoring the loci of each NIL
-### Imputing missing scores
-### Calculating the likelihood of an introgressed locus
-### Predicting introgression intervals
-### Creating an Output
+<li> Scoring the loci of each NIL</li>
+<li> Imputing missing scores</li>
+<li> Calculating the likelihood of an introgressed locus</li>
+<li>  Predicting introgression intervals</li>
+<li> Creating an Output</li>
 
 ## Results
 
