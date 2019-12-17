@@ -10,6 +10,8 @@
 <li>  Predicting introgression intervals</li>
 <li> Creating an Output</li>
 
+
+
 ## Result samples
 
 <b>ab_logP.jpeg</b> - A plot of the -log of the probability that a polymorphic locus is from the donor parent 
