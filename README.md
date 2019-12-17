@@ -4,7 +4,7 @@
 ### introgression_finder.r
 
 
-<li> Scoring the loci of each NIL</li>
+    <li> Scoring the loci of each NIL</li>
 <li> Imputing missing scores</li>
 <li> Calculating the likelihood of an introgressed locus</li>
 <li>  Predicting introgression intervals</li>
